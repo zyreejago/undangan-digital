@@ -158,6 +158,7 @@
       .fromTo(charsA, { autoAlpha: 0, filter: "blur(14px)", y: 26 }, { autoAlpha: 1, filter: "blur(0px)", y: 0, duration: 1.05, stagger: 0.07 }, "-=0.4")
       .fromTo(amp, { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.6, ease: "back.out(2.2)" }, "-=0.5")
       .fromTo(charsB, { autoAlpha: 0, filter: "blur(14px)", y: 26 }, { autoAlpha: 1, filter: "blur(0px)", y: 0, duration: 1.05, stagger: 0.07 }, "-=0.35");
+    tl.fromTo(".cover .made-credit", { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: 0.7 }, "-=0.5");
 
     /* joglo tergambar garis demi garis */
     var paths = gsap.utils.toArray("#jogloCover .draw");
@@ -218,7 +219,7 @@
     tl.fromTo(".hero-medallion", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.8 })
       .fromTo(".hero .kicker", { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.4")
       .fromTo(".hero-names span", { autoAlpha: 0, y: 40, filter: "blur(8px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 0.9, stagger: 0.12 }, "-=0.3")
-      .fromTo(".hero .orn, .hero-date, .hero-place", { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.09 }, "-=0.45")
+      .fromTo(".hero .made-credit, .hero .orn, .hero-date, .hero-place", { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.09 }, "-=0.45")
       .fromTo(".hero-joglo", { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 1 }, "-=0.35");
   }
 

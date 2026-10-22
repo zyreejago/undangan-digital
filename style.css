@@ -362,3 +362,9 @@ img{display:block;max-width:100%}
   .tl-body{order:2;flex:1 1 calc(100% - 76px)}
   .tl-photo{order:3;width:100%;aspect-ratio:16/9}
 }
+
+.made-credit{font-size:.7rem;letter-spacing:.3em;text-transform:lowercase;color:var(--mauve);text-align:center}
+.made-credit a{color:var(--plum);font-weight:600;text-decoration:none}
+.cover .made-credit{margin-top:4px}
+.hero .made-credit{margin-top:8px}
+.footer-credit{margin-top:10px;font-size:.66rem}
