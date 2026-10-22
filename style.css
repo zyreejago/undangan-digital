@@ -1,0 +1,314 @@
+/* ============================================================
+   Undangan Digital — tema ilustrasi garis ivory plum sage
+   Terinspirasi undangan ngunduh mantu klasik: bingkai renda,
+   merak, joglo gambar garis, bunga lembut di atas kertas ivory.
+   ============================================================ */
+:root{
+  --paper:#F7F3EA;
+  --panel:#FFFDF7;
+  --ink:#4A3B47;
+  --ink-soft:#7A6873;
+  --plum:#5E2A3A;
+  --plum-2:#74384C;
+  --mauve:#A98BA6;
+  --pink:#C9A0B4;
+  --sage:#7A8B6F;
+  --sage-deep:#66785E;
+  --line:#DCD2C0;
+  --shadow:0 16px 36px rgba(94,42,58,.13);
+  --pad-x:max(20px, calc((100% - 1060px)/2));
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Jost",system-ui,sans-serif;color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.30 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img{display:block;max-width:100%}
+.kicker{letter-spacing:.38em;text-transform:uppercase;font-size:.7rem;font-weight:500;color:var(--sage-deep);text-align:center}
+.section-title{
+  font-family:"Cormorant Garamond",serif;font-weight:700;
+  font-size:2.1rem;color:var(--plum);text-align:center;margin:.4rem 0 1.5rem;
+  padding-bottom:12px;
+  background:linear-gradient(var(--pink),var(--pink)) bottom center/0% 2px no-repeat;
+}
+.script-names{
+  font-family:"Pinyon Script",cursive;font-weight:400;color:var(--plum);
+  display:flex;align-items:baseline;justify-content:center;gap:.32em;line-height:1.1;
+}
+.script-names .amp{font-size:.5em;color:var(--mauve)}
+.orn{width:180px;height:22px;margin:14px auto 0}
+
+/* ================= SAMPUL / INTRO ================= */
+.cover{
+  position:fixed;inset:0;z-index:50;overflow-y:auto;overflow-x:hidden;
+  background:
+    radial-gradient(120% 70% at 50% 0%, #FCF9F2 0%, var(--paper) 60%, #F1EADB 100%);
+  transition:opacity .8s ease, visibility .8s;
+}
+.cover.opened{opacity:0;visibility:hidden;pointer-events:none}
+.cover-frame{position:absolute;inset:12px;border:1px solid rgba(122,139,111,.65);pointer-events:none}
+.cover-frame::after{content:"";position:absolute;inset:5px;border:1px solid rgba(122,139,111,.35)}
+.lace{position:absolute;width:132px;height:132px}
+.lc-tl{top:-4px;left:-4px}
+.lc-tr{top:-4px;right:-4px}
+.lc-bl{bottom:-4px;left:-4px}
+.lc-br{bottom:-4px;right:-4px}
+.cover-medallion{
+  position:absolute;top:15px;right:15px;width:46px;height:46px;z-index:2;
+  animation:spinSlow 70s linear infinite;
+}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+.cover-peacock{position:absolute;z-index:1;pointer-events:none}
+.cover-peacock.left{left:-16px;bottom:15%;width:176px;aspect-ratio:360/480}
+.cover-peacock.right{right:-14px;top:56px;width:188px;aspect-ratio:360/440}
+.cover-inner{
+  position:relative;z-index:3;min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;
+  padding:10.5vh 22px 118px;text-align:center;
+}
+.cover-kicker{
+  font-family:"Cormorant Garamond",serif;font-weight:600;
+  letter-spacing:.52em;text-transform:uppercase;font-size:.82rem;color:#6E5A6E;
+  text-indent:.52em;
+}
+.intro-names{
+  font-family:"Pinyon Script",cursive;font-weight:400;color:var(--plum);
+  font-size:clamp(3.8rem,17vw,5.4rem);line-height:1.12;
+  display:flex;align-items:baseline;gap:.3em;margin-top:14px;
+  text-shadow:0 2px 10px rgba(247,243,234,.9);
+}
+.intro-names .amp{font-size:.52em;color:var(--mauve)}
+.intro-names .ch{display:inline-block}
+.cover-joglo{width:min(86vw,440px);margin-top:2px}
+.guest-card{margin-top:16px}
+.guest-to{font-size:.95rem;line-height:1.65;color:var(--ink)}
+.guest-name{
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;
+  font-size:1.55rem;color:var(--plum);margin:.4rem 0 .3rem;line-height:1.3;
+}
+.guest-note{font-size:.7rem;font-style:italic;color:var(--ink-soft)}
+.btn-open{
+  margin-top:18px;display:inline-flex;align-items:center;gap:.55rem;
+  background:linear-gradient(160deg,var(--plum-2),var(--plum));
+  color:#FBF6EC;border:1px solid rgba(94,42,58,.35);
+  font-family:"Jost",sans-serif;font-size:.93rem;font-weight:500;letter-spacing:.06em;
+  padding:.76rem 1.6rem;border-radius:999px;cursor:pointer;
+  box-shadow:0 12px 24px rgba(94,42,58,.28);transition:transform .25s, box-shadow .25s;
+}
+.btn-open:hover{transform:translateY(-2px);box-shadow:0 16px 28px rgba(94,42,58,.32)}
+.cover-florals{position:absolute;left:0;bottom:0;width:100%;height:132px;z-index:2;pointer-events:none}
+
+/* ================= HALAMAN ================= */
+.page{position:relative;z-index:1;min-height:100vh}
+.page section{padding:50px var(--pad-x) 6px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .85s ease,transform .85s ease}
+.reveal.visible{opacity:1;transform:none}
+.gsap-on .reveal{opacity:1;transform:none}
+
+/* ---------- hero ---------- */
+.hero{padding:74px 20px 10px;text-align:center}
+.hero-medallion{width:72px;height:72px;margin:0 auto 6px;animation:spinSlow 70s linear infinite}
+.hero-names{font-size:clamp(3.4rem,6vw,5rem)}
+.hero-date{font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:600;color:var(--ink);margin-top:14px}
+.hero-place{letter-spacing:.26em;text-transform:uppercase;font-size:.72rem;color:var(--sage-deep);margin-top:5px}
+.hero-joglo{width:min(520px,88vw);aspect-ratio:360/330;margin:30px auto 0}
+
+/* ---------- ayat ---------- */
+.verse{
+  background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  padding:34px 24px 32px !important;
+  margin:46px max(20px, calc((100% - 860px)/2)) 0;
+  text-align:center;box-shadow:var(--shadow);
+}
+.verse .arabic{font-family:"Cormorant Garamond",serif;font-size:1.28rem;line-height:2.05;color:var(--ink)}
+.verse-text{font-style:italic;line-height:1.8;color:var(--ink-soft);margin-top:14px;font-size:.96rem}
+.verse-src{margin-top:12px;font-weight:600;letter-spacing:.1em;font-size:.84rem;color:var(--sage-deep)}
+
+/* ---------- mempelai ---------- */
+.salam{
+  font-family:"Cormorant Garamond",serif;font-weight:600;font-style:italic;
+  text-align:center;font-size:1.55rem;color:var(--plum);line-height:1.4;
+}
+.intro-text{text-align:center;line-height:1.85;color:var(--ink-soft);font-size:.97rem;margin:14px auto 4px;max-width:46ch}
+.couple-grid{display:flex;flex-direction:column;align-items:center}
+.person{text-align:center;padding-top:28px;max-width:340px}
+.arch-photo{
+  border-radius:999px 999px 14px 14px;overflow:hidden;
+  border:2px solid var(--sage);
+  box-shadow:0 0 0 5px var(--panel),0 0 0 6px var(--line),var(--shadow);
+  background:#E7DFCE;
+}
+.arch-photo.big{width:212px;aspect-ratio:3/3.9;margin:0 auto}
+.arch-photo img{width:100%;height:100%;object-fit:cover}
+.person-name{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.75rem;color:var(--plum);margin-top:20px;line-height:1.25}
+.person-desc{line-height:1.75;color:var(--ink-soft);font-size:.94rem;margin-top:8px}
+.couple-amp{font-family:"Pinyon Script",cursive;font-size:2.6rem;color:var(--mauve);margin-top:22px;line-height:1}
+
+/* ---------- save the date ---------- */
+.savethedate{text-align:center}
+.countdown{display:flex;gap:10px;justify-content:center;margin:6px 0 24px}
+.cd-box{
+  width:68px;padding:14px 0 11px;border-radius:14px;
+  background:var(--panel);border:1px solid var(--line);box-shadow:0 10px 22px rgba(94,42,58,.08);
+}
+.cd-num{display:block;font-family:"Cormorant Garamond",serif;font-size:1.85rem;font-weight:700;line-height:1;color:var(--plum)}
+.cd-label{display:block;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;margin-top:5px;color:var(--sage-deep)}
+.btn-plum{
+  display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;cursor:pointer;
+  background:linear-gradient(160deg,var(--plum-2),var(--plum));color:#FBF6EC;
+  border-radius:999px;padding:.66rem 1.55rem;font-size:.9rem;font-weight:500;letter-spacing:.04em;
+  box-shadow:0 10px 22px rgba(94,42,58,.25);
+}
+.btn-plum.small{padding:.58rem 1.35rem;font-size:.86rem;margin-top:18px}
+
+/* ---------- acara ---------- */
+.event-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  text-align:center;padding:30px 22px 28px;margin-bottom:18px;box-shadow:var(--shadow);
+}
+.event-card:last-child{margin-bottom:0}
+.event-orn{width:30px;height:30px;color:var(--sage-deep);margin:0 auto}
+.event-name{font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:700;color:var(--plum);margin-top:8px}
+.event-day{letter-spacing:.32em;text-transform:uppercase;font-size:.7rem;color:var(--sage-deep);margin-top:14px}
+.event-date{display:flex;align-items:center;justify-content:center;gap:10px;font-family:"Cormorant Garamond",serif;color:var(--ink);margin-top:2px}
+.event-date strong{font-size:3rem;font-weight:700;color:var(--plum);line-height:1}
+.event-date span{font-size:1.05rem;line-height:1.25;text-align:left;font-weight:600}
+.event-time{margin-top:10px;color:var(--ink)}
+.event-place{margin-top:12px;line-height:1.7;color:var(--ink-soft);font-size:.94rem}
+.event-place strong{color:var(--ink)}
+
+/* ---------- kisah ---------- */
+.story-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  overflow:hidden;margin-bottom:20px;box-shadow:var(--shadow);text-align:left;
+}
+.story-photo{aspect-ratio:16/10;overflow:hidden}
+.story-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.story-body{padding:20px 22px 24px}
+.story-body h4{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:700;color:var(--plum)}
+.story-body p{line-height:1.75;color:var(--ink-soft);font-size:.95rem;margin-top:6px}
+
+/* ---------- galeri ---------- */
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g-item{border-radius:14px;overflow:hidden;aspect-ratio:3/3.6;border:1px solid var(--line);box-shadow:0 10px 22px rgba(94,42,58,.1)}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.g-item:hover img{transform:scale(1.05)}
+
+/* ---------- amplop ---------- */
+.gift-intro{text-align:center;line-height:1.85;color:var(--ink-soft);font-size:.96rem;max-width:46ch;margin:0 auto}
+.bank-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  padding:24px 22px;margin-top:18px;text-align:center;box-shadow:var(--shadow);
+}
+.bank-logo{height:34px;width:auto;margin:0 auto}
+.bank-number{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.85rem;letter-spacing:.1em;color:var(--ink);margin-top:14px}
+.bank-owner{color:var(--ink-soft);font-size:.92rem;margin-top:2px}
+.btn-copy{
+  margin-top:16px;background:var(--sage);color:#FBF6EC;border:none;cursor:pointer;
+  border-radius:999px;padding:.56rem 1.35rem;font-family:"Jost",sans-serif;
+  font-size:.84rem;font-weight:500;letter-spacing:.04em;transition:background .25s;
+}
+.btn-copy:hover{background:var(--sage-deep)}
+.btn-copy.copied{background:var(--plum)}
+.gift-physical{
+  margin-top:20px;text-align:center;border:1px dashed var(--sage);
+  border-radius:18px;padding:24px 22px;background:rgba(255,253,247,.55);
+}
+.gift-physical h4{font-family:"Cormorant Garamond",serif;font-size:1.4rem;color:var(--plum)}
+.gift-physical p{line-height:1.75;color:var(--ink-soft);margin-top:8px;font-size:.95rem}
+
+/* ---------- rsvp ---------- */
+.rsvp-intro{text-align:center;line-height:1.85;color:var(--ink-soft);font-size:.96rem;max-width:46ch;margin:0 auto}
+.rsvp-form{
+  margin-top:22px;background:var(--panel);border:1px solid var(--line);
+  border-radius:20px;padding:24px 20px;box-shadow:var(--shadow);
+}
+.rsvp-form label{display:block;font-size:.85rem;font-weight:500;color:var(--plum);letter-spacing:.03em;margin-bottom:16px}
+.rsvp-form input,.rsvp-form select,.rsvp-form textarea{
+  width:100%;margin-top:6px;padding:.72rem .85rem;border-radius:10px;
+  border:1px solid var(--line);background:#FBF8F1;color:var(--ink);
+  font-family:"Jost",sans-serif;font-size:.95rem;resize:vertical;
+}
+.rsvp-form input:focus,.rsvp-form select:focus,.rsvp-form textarea:focus{outline:2px solid var(--pink);outline-offset:1px}
+.form-btn{width:100%;justify-content:center;margin-top:2px}
+.wish-list{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.wish{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:12px;padding:14px 16px}
+.wish-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.wish-name{font-weight:600;color:var(--plum)}
+.wish-badge{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;background:#EBDCE4;color:var(--plum);font-weight:600;border-radius:999px;padding:.22rem .6rem}
+.wish-msg{margin-top:5px;line-height:1.65;color:var(--ink-soft);font-size:.93rem}
+.wish-empty{color:var(--ink-soft);font-style:italic;text-align:center}
+
+/* ---------- penutup ---------- */
+.closing{text-align:center;padding-bottom:20px !important}
+.closing p{line-height:1.85;color:var(--ink-soft);font-size:.97rem;max-width:46ch;margin:0 auto 14px}
+.closing .salam{margin:10px 0 16px}
+.closing-from{margin-top:20px !important}
+.closing-names{font-size:3rem}
+.closing-family{font-size:.87rem !important}
+.footer{padding:28px 20px 32px;text-align:center;font-size:.72rem;line-height:1.65;color:#B3A3AF}
+
+/* ---------- tombol melayang ---------- */
+.music-btn{
+  position:fixed;right:18px;bottom:18px;z-index:60;width:48px;height:48px;
+  border-radius:50%;border:1px solid rgba(251,246,236,.7);cursor:pointer;
+  background:linear-gradient(160deg,var(--plum-2),var(--plum));color:#FBF6EC;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 12px 26px rgba(94,42,58,.35);
+}
+.gift-btn{bottom:78px}
+.music-btn.playing{animation:pulse 2.2s ease-in-out infinite}
+.music-btn.playing .ic-on{animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{
+  0%,100%{box-shadow:0 12px 26px rgba(94,42,58,.35),0 0 0 0 rgba(201,160,180,.45)}
+  50%{box-shadow:0 12px 26px rgba(94,42,58,.35),0 0 0 12px rgba(201,160,180,0)}
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width:1024px){
+  .cover-peacock.left{width:252px;left:-10px;bottom:14%}
+  .cover-peacock.right{width:272px;right:-12px;top:48px}
+  .cover-medallion{width:58px;height:58px;top:22px;right:22px}
+  .lace{width:150px;height:150px}
+  .cover-joglo{width:470px}
+  .cover-florals{height:150px}
+  .page section{padding-top:64px}
+  .couple-grid{flex-direction:row;align-items:flex-start;justify-content:center;gap:36px}
+  .person{padding-top:36px}
+  .arch-photo.big{width:252px}
+  .couple-amp{margin-top:150px}
+  .cd-box{width:80px}
+  .events-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .event-card{margin-bottom:0}
+  .story-item{display:grid;grid-template-columns:42% 58%;margin-bottom:24px}
+  .story-item:nth-child(even){direction:rtl}
+  .story-item:nth-child(even) .story-body{direction:ltr}
+  .story-photo{aspect-ratio:auto;height:300px}
+  .story-body{padding:28px 30px;display:flex;flex-direction:column;justify-content:center}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .g-item{aspect-ratio:3/3.4}
+  .gift-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .bank-card{margin-top:22px}
+  .gift-physical{max-width:640px;margin-left:auto;margin-right:auto}
+  .rsvp-form{max-width:640px;margin-left:auto;margin-right:auto}
+  .wish-list{max-width:640px;margin-left:auto;margin-right:auto}
+}
+@media (max-width:380px){
+  .intro-names{font-size:3.3rem}
+  .cover-peacock.left{width:142px}
+  .cover-peacock.right{width:152px}
+  .cd-box{width:60px}
+  .guest-name{font-size:1.38rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{transition:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .cover-medallion,.hero-medallion{animation:none}
+}
