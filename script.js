@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var WEDDING_DATE = new Date("2026-12-19T08:00:00+07:00");
+  var WEDDING_DATE = new Date("2026-11-10T08:00:00+07:00");
   var LS_KEY = "undangan-gita-iwan:wishes:v1";
   var REPO_BASE = "undangan-digital";
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -359,10 +359,10 @@
         "VERSION:2.0",
         "PRODID:-//Zeecreate//Undangan Digital//ID",
         "BEGIN:VEVENT",
-        "UID:gita-iwan-20261219@digital.zeecreate.site",
+        "UID:gita-iwan-20261110@digital.zeecreate.site",
         "DTSTAMP:20261022T000000Z",
-        "DTSTART:20261219T010000Z",
-        "DTEND:20261219T060000Z",
+        "DTSTART:20261110T010000Z",
+        "DTEND:20261110T060000Z",
         "SUMMARY:Ngunduh Mantu Gita & Iwan",
         "DESCRIPTION:Ngunduh mantu dan resepsi Gita Ayu Prameswari dan Iwan Setiawan",
         "LOCATION:Pendopo Ageng Taman Budaya Yogyakarta",
