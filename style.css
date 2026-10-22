@@ -376,3 +376,6 @@ img{display:block;max-width:100%}
 
 .ics-note{margin-top:14px;font-size:.82rem;color:var(--ink-soft)}
 .ics-link{background:none;border:none;padding:0;font:inherit;color:var(--plum);font-weight:600;text-decoration:underline;cursor:pointer}
+
+.hero-photo{width:216px;aspect-ratio:3/3.5;margin:20px auto 0}
+@media (min-width:1024px){.hero-photo{width:238px}}
