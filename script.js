@@ -1,5 +1,5 @@
 /* ============================================================
-   Undangan Digital Gita & Iwan — logika halaman + gerak
+   Undangan Digital Rezzy & Chiquita — logika halaman + gerak
    Nama tamu dari path URL: /nama-tamu/
    Intro: nama muncul per huruf dengan blur, joglo tergambar.
    Animasi: GSAP + ScrollTrigger, cadangan IntersectionObserver
@@ -8,7 +8,7 @@
   "use strict";
 
   var WEDDING_DATE = new Date("2026-11-10T08:00:00+07:00");
-  var LS_KEY = "undangan-gita-iwan:wishes:v1";
+  var LS_KEY = "undangan-rezzy-chiquita:wishes:v1";
   var REPO_BASE = "undangan-digital";
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var HAS_GSAP = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
@@ -363,12 +363,12 @@
         "VERSION:2.0",
         "PRODID:-//Zeecreate//Undangan Digital//ID",
         "BEGIN:VEVENT",
-        "UID:gita-iwan-20261110@digital.zeecreate.site",
+        "UID:rezzy-chiquita-20261110@digital.zeecreate.site",
         "DTSTAMP:20261022T000000Z",
         "DTSTART:20261110T010000Z",
         "DTEND:20261110T060000Z",
-        "SUMMARY:Ngunduh Mantu Gita & Iwan",
-        "DESCRIPTION:Ngunduh mantu dan resepsi Gita Ayu Prameswari dan Iwan Setiawan",
+        "SUMMARY:Ngunduh Mantu Rezzy & Chiquita",
+        "DESCRIPTION:Ngunduh mantu dan resepsi Rezzy dan Chiquita",
         "LOCATION:Pendopo Ageng Taman Budaya Yogyakarta",
         "END:VEVENT",
         "END:VCALENDAR"
@@ -376,7 +376,7 @@
       var blob = new Blob([ics], { type: "text/calendar" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "ngunduh-mantu-gita-iwan.ics";
+      a.download = "ngunduh-mantu-rezzy-chiquita.ics";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -434,8 +434,8 @@
 
   /* ---------- ucapan & RSVP (localStorage) ---------- */
   var SEED_WISHES = [
-    { name: "Keluarga Besar Pramudya (Solo)", attend: "Hadir", msg: "Nderek bingah, Nak Gita kini resmi menjadi bagian keluarga Yogyakarta. Mugi tansah pinaringan sakinah, mawaddah, warahmah." },
-    { name: "Mbak Ayu & Mas Bimo", attend: "Hadir", msg: "Selamat untuk Iwan dan Gita! Senang akhirnya bisa kumpul dua keluarga besar. Sampai jumpa di pendopo." },
+    { name: "Keluarga Besar Pramudya (Solo)", attend: "Hadir", msg: "Nderek bingah, Nak Chiquita kini resmi menjadi bagian keluarga Yogyakarta. Mugi tansah pinaringan sakinah, mawaddah, warahmah." },
+    { name: "Mbak Ayu & Mas Bimo", attend: "Hadir", msg: "Selamat untuk Rezzy dan Chiquita! Senang akhirnya bisa kumpul dua keluarga besar. Sampai jumpa di pendopo." },
     { name: "Lik Parman", attend: "Belum Pasti", msg: "Mugi acara ngunduh mantu berjalan lancar, kedua mempelai tansah sehat lan rukun ngantos kaken ninen." }
   ];
 
