@@ -87,8 +87,8 @@
       if (!ctx) return;
       var pattern = [0, 2, 4, 3, 5, 4, 2, 1, 0, 2, 3, 4, 6, 5, 4, 2];
       var now = ctx.currentTime;
-      pluck(SCALE[pattern[step % pattern.length]], now, 0.11);
-      if (step % 4 === 0) pluck(SCALE[0] / 2, now, 0.07);
+      pluck(SCALE[pattern[step % pattern.length]], now, 0.17);
+      if (step % 4 === 0) pluck(SCALE[0] / 2, now, 0.11);
       step++;
     }
 
@@ -98,11 +98,14 @@
         if (!AC) return;
         ctx = new AC();
       }
-      if (ctx.state === "suspended") ctx.resume();
       if (playing) return;
       playing = true;
+      if (ctx.state !== "running") {
+        var p = ctx.resume();
+        if (p && p.then) p.then(function () { if (playing && !timer) { tick(); timer = setInterval(tick, 1080); } });
+      }
       tick();
-      timer = setInterval(tick, 1150);
+      timer = setInterval(tick, 1080);
     }
 
     function stop() {
@@ -124,6 +127,7 @@
     btn.querySelector(".ic-on").style.display = playing ? "" : "none";
     btn.querySelector(".ic-off").style.display = playing ? "none" : "";
     btn.classList.toggle("playing", playing);
+    btn.setAttribute("aria-label", playing ? "Jeda musik" : "Putar musik");
   }
 
   /* ---------- intro sampul (seperti video) ---------- */
