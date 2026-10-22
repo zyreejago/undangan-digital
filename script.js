@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var WEDDING_DATE = new Date("2026-09-19T08:00:00+07:00");
+  var WEDDING_DATE = new Date("2026-12-19T08:00:00+07:00");
   var LS_KEY = "undangan-gita-iwan:wishes:v1";
   var REPO_BASE = "undangan-digital";
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -349,6 +349,37 @@
     }
   }
 
+  /* ---------- unduh .ics (cadangan save the date) ---------- */
+  function initIcs() {
+    var btn = document.getElementById("icsBtn");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var ics = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Zeecreate//Undangan Digital//ID",
+        "BEGIN:VEVENT",
+        "UID:gita-iwan-20261219@digital.zeecreate.site",
+        "DTSTAMP:20261022T000000Z",
+        "DTSTART:20261219T010000Z",
+        "DTEND:20261219T060000Z",
+        "SUMMARY:Ngunduh Mantu Gita & Iwan",
+        "DESCRIPTION:Ngunduh mantu dan resepsi Gita Ayu Prameswari dan Iwan Setiawan",
+        "LOCATION:Pendopo Ageng Taman Budaya Yogyakarta",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+      var blob = new Blob([ics], { type: "text/calendar" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "ngunduh-mantu-gita-iwan.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+    });
+  }
+
   /* ---------- hitung mundur ---------- */
   function pad(n) { return String(n).padStart(2, "0"); }
   function tickCountdown() {
@@ -461,6 +492,7 @@
     tickCountdown();
     setInterval(tickCountdown, 1000);
     initCopy();
+    initIcs();
     initForm();
     renderWishes();
     introTimeline();
