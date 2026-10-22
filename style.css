@@ -312,3 +312,53 @@ img{display:block;max-width:100%}
   html{scroll-behavior:auto}
   .cover-medallion,.hero-medallion{animation:none}
 }
+
+/* ---------- konten khas ngunduh mantu ---------- */
+.aksara{font-family:"Noto Sans Javanese",serif;color:var(--sage-deep);font-size:1.05rem;letter-spacing:.06em;text-align:center}
+.aksara.big{font-size:1.5rem;margin-top:4px}
+.sambutan{padding-top:56px}
+.sambutan-title{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:2.3rem;color:var(--plum);text-align:center}
+.sambutan-text{text-align:center;line-height:1.9;color:var(--ink-soft);font-size:.97rem;max-width:52ch;margin:16px auto 0}
+.sambutan-text strong{color:var(--ink)}
+.person-label{letter-spacing:.34em;text-transform:uppercase;font-size:.68rem;font-weight:600;color:var(--sage-deep);margin-bottom:16px}
+.venue-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;text-align:center;padding:28px 22px;box-shadow:var(--shadow)}
+.prosesi{margin-top:34px;max-width:560px;margin-left:auto;margin-right:auto}
+.p-row{display:flex;gap:14px;position:relative;padding-bottom:26px;text-align:left}
+.p-row:last-child{padding-bottom:0}
+.p-row::before{content:"";position:absolute;left:59px;top:16px;bottom:-2px;width:2px;background:var(--line)}
+.p-row:last-child::before{display:none}
+.p-time{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.15rem;color:var(--plum);width:46px;flex:none;text-align:right;padding-top:1px}
+.p-dot{width:12px;height:12px;border-radius:50%;background:var(--pink);border:2px solid var(--sage);flex:none;margin-top:5px;position:relative;z-index:1}
+.p-body h4{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:700;color:var(--plum)}
+.p-body p{line-height:1.7;color:var(--ink-soft);font-size:.93rem;margin-top:2px}
+.tl{max-width:620px;margin:0 auto}
+.tl-item{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:var(--shadow);text-align:left}
+.tl-year{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.3rem;color:var(--sage-deep);flex:none;width:52px}
+.tl-body{flex:1}
+.tl-body h4{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:700;color:var(--plum)}
+.tl-body p{line-height:1.72;color:var(--ink-soft);font-size:.93rem;margin-top:4px}
+.tl-photo{width:84px;flex:none;border-radius:12px;overflow:hidden;aspect-ratio:3/3.8}
+.tl-photo img{width:100%;height:100%;object-fit:cover}
+.dresscode{text-align:center}
+.swatches{display:flex;gap:14px;justify-content:center;margin:4px 0 18px}
+.sw{width:44px;height:44px;border-radius:50%;border:2px solid var(--panel);box-shadow:0 0 0 1px var(--line),0 8px 16px rgba(94,42,58,.14)}
+.dress-text{line-height:1.85;color:var(--ink-soft);font-size:.96rem;max-width:46ch;margin:0 auto}
+.g-item{position:relative}
+.g-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:20px 10px 8px;
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-size:.92rem;color:#FBF6EC;text-align:center;
+  background:linear-gradient(transparent,rgba(62,36,46,.72));
+}
+.bank-wordmark{font-family:"Jost",sans-serif;font-size:1.7rem;letter-spacing:.02em;line-height:1}
+.bank-wordmark.mandiri{color:#17468A;font-weight:600;font-style:italic}
+.bank-wordmark.gopay{color:#00A3C8;font-weight:700}
+@media (min-width:1024px){
+  .tl-photo{width:104px}
+  .venue-card{max-width:640px;margin:0 auto}
+}
+@media (max-width:560px){
+  .tl-item{flex-wrap:wrap}
+  .tl-year{order:1}
+  .tl-body{order:2;flex:1 1 calc(100% - 76px)}
+  .tl-photo{order:3;width:100%;aspect-ratio:16/9}
+}

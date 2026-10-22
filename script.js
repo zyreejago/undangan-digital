@@ -282,7 +282,7 @@
       });
     });
 
-    gsap.utils.toArray(".story-item").forEach(function (item, i) {
+    gsap.utils.toArray(".story .tl-item").forEach(function (item, i) {
       reveal(item, { x: i % 2 ? 58 : -58, rotation: i % 2 ? 1.2 : -1.2 }, { duration: 1.05 });
     });
 
@@ -307,7 +307,7 @@
       reveal(w, { x: -28 }, { delay: (i % 3) * 0.08 });
     });
 
-    gsap.utils.toArray(".arch-photo img, .story-photo img").forEach(function (img) {
+    gsap.utils.toArray(".arch-photo img, .tl-photo img").forEach(function (img) {
       gsap.fromTo(img, { scale: 1.13 }, {
         scale: 1, ease: "none",
         scrollTrigger: { trigger: img, start: "top bottom", end: "bottom top", scrub: true }
@@ -398,9 +398,9 @@
 
   /* ---------- ucapan & RSVP (localStorage) ---------- */
   var SEED_WISHES = [
-    { name: "Keluarga Besar Setiawan", attend: "Hadir", msg: "Selamat datang di keluarga besar kami, Nak Gita. Semoga menjadi keluarga yang sakinah, mawaddah, warahmah untuk Iwan dan Gita." },
-    { name: "Nadia & Farhan", attend: "Hadir", msg: "Happy wedding Gita dan Iwan! Lancar sampai hari H, kami siap hadir meramaikan pendopo." },
-    { name: "Pakde Wiryo", attend: "Belum Pasti", msg: "Nderek bingah untuk kedua mempelai. Semoga diberi kelancaran, kesehatan, dan rezeki yang berkah." }
+    { name: "Keluarga Besar Pramudya (Solo)", attend: "Hadir", msg: "Nderek bingah, Nak Gita kini resmi menjadi bagian keluarga Yogyakarta. Mugi tansah pinaringan sakinah, mawaddah, warahmah." },
+    { name: "Mbak Ayu & Mas Bimo", attend: "Hadir", msg: "Selamat untuk Iwan dan Gita! Senang akhirnya bisa kumpul dua keluarga besar. Sampai jumpa di pendopo." },
+    { name: "Lik Parman", attend: "Belum Pasti", msg: "Mugi acara ngunduh mantu berjalan lancar, kedua mempelai tansah sehat lan rukun ngantos kaken ninen." }
   ];
 
   function loadWishes() {
